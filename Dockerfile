@@ -1,8 +1,8 @@
-FROM alpine:3
+FROM ubuntu:21.10
 LABEL maintainer "akiraheid <https://github.com/akiraheid/oci-firefox>"
 
-RUN apk add --no-cache --no-progress firefox libcanberra-gtk3 pciutils-libs
-RUN apk add --no-cache --no-progress libva-glx
+RUN apt-get update
+RUN apt-get install -y firefox ubuntu-restricted-extras
 
 COPY ./decoap/ /decoap/
 
